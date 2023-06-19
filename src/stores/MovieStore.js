@@ -22,7 +22,7 @@ export const useMovieStore = defineStore("movieStore", {
         isWatched: false,
       },
     ],
-    activeTab: 1,
+    activeTab: 2,
   }),
   getters: {
     watchedMovies() {
@@ -38,7 +38,7 @@ export const useMovieStore = defineStore("movieStore", {
       this.movies[idx].isWatched = !this.movies[idx].isWatched
     },
     deleteMovie(id) {
-      this.movies = this.movies.filter(el => el.id !== id)
+      this.movies = this.movies.filter(el => el.id !== id )
     }
   }
 });

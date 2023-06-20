@@ -22,7 +22,7 @@
           Delete
         </button>
       </div>
-      <div class="movie-buttons" v-else>
+      <div class="movie-buttons" v-else @click="searchStore.addToUserMovies(movie)">
         <button class="btn btn_green">Add</button>
       </div>
     </div>
@@ -31,8 +31,10 @@
 
 <script setup>
 import {useMovieStore} from '../stores/MovieStore'
+import {useSearchStore} from '../stores/SearchStore'
 
 const movieStore = useMovieStore()
+const searchStore = useSearchStore()
 const props = defineProps({
   movie: {
     type: Object,
